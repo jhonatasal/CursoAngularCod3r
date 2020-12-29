@@ -24,7 +24,7 @@ import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { OrderComponent } from './order/order.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from './shared/input/input.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
@@ -55,7 +55,8 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [RestaurantService, ShoppingCartService, OrderService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
