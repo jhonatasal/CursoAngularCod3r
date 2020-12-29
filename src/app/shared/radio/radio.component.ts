@@ -39,7 +39,6 @@ export class RadioComponent implements OnInit, ControlValueAccessor {
   }
 
   registerOnTouched(fn: any): void {
-
   }
 
   /** 

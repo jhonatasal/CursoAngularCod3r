@@ -1,3 +1,7 @@
+import { RatingComponent } from './shared/rating/rating.component';
+import { DeliveryCostComponent } from './order/delivery-cost/delivery-cost.component';
+import { OrderService } from './order/order.service';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { RadioComponent } from './shared/radio/radio.component';
 import { ShoppingCartService } from './restaurant-details/shopping-cart/shopping-cart.service';
 import { ReviewsComponent } from './restaurant-details/reviews/reviews.component';
@@ -22,6 +26,7 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
 import { OrderComponent } from './order/order.component';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './shared/input/input.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 
@@ -40,7 +45,11 @@ import { InputComponent } from './shared/input/input.component';
     ReviewsComponent,
     OrderComponent,
     InputComponent,
-    RadioComponent
+    RadioComponent,
+    OrderItemsComponent,
+    DeliveryCostComponent,
+    OrderSummaryComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +57,7 @@ import { InputComponent } from './shared/input/input.component';
     RouterModule.forRoot(ROUTES),
     FormsModule
   ],
-  providers: [RestaurantService, ShoppingCartService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [RestaurantService, ShoppingCartService, OrderService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
