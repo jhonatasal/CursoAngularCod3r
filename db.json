@@ -438,6 +438,22 @@
         }
       ],
       "id": 5
+    },
+    {
+      "name": "JHONATAS ALVES DE SOUZA",
+      "email": "jhoninha.10@gmail.com",
+      "emailConfirmation": "jhoninha.10@gmail.com",
+      "address": "Rua Jatoba - Girassol",
+      "number": "33",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 6
     }
   ]
 }
