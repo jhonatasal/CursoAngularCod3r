@@ -1,4 +1,3 @@
-import { ErroHandler } from './../app.error-handler';
 import { MEAT_API } from './../app.api';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/Http';

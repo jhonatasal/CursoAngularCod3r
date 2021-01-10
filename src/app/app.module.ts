@@ -1,3 +1,5 @@
+import { ApplicationErroHandler } from './app.error-handler';
+import { LoginComponent } from './security/login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { ReviewsComponent } from './restaurant-details/reviews/reviews.component';
@@ -7,7 +9,7 @@ import { MenuComponent } from './restaurant-details/menu/menu.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { ROUTES } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule, ErrorHandler } from '@angular/core';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
@@ -19,6 +21,8 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { UserDetailComponent } from './header/user-detail/user-detail.component';
+
 
 
 
@@ -36,6 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
+    LoginComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +50,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, { provide: LOCALE_ID, useValue: 'pt-BR' }],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: ErrorHandler, useClass: ApplicationErroHandler }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

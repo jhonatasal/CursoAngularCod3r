@@ -7,12 +7,15 @@ import { FormControlName, NgModel } from '@angular/forms';
 })
 export class InputComponent implements OnInit, AfterContentInit {
 
-  constructor() { }
 
-  @Input() input: any;
   @Input() label: string;
   @Input() errorMessage: string;
+  @Input() showTip: boolean = true;
 
+
+  input: any;
+
+  constructor() { }
 
   @ContentChild(NgModel) model: NgModel
   @ContentChild(FormControlName) control: FormControlName
